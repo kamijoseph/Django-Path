@@ -6,4 +6,8 @@ def helloworld(request):
     return HttpResponse("<h1>Hello World<h1/>")
 
 def post(request, id):
-    return HttpResponse(id)
+    for post in posts:
+        if post['id'] == id:
+            post_dict = post
+            break
+    return HttpResponse(f"{id} ")
